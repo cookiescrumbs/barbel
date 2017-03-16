@@ -6,7 +6,6 @@ module.exports = function(config) {
         frameworks: ['jasmine'],
         files: [
             require.resolve('phantomjs-polyfill/bind-polyfill'),
-            require.resolve('requirejs/require'),
             'test/unit/*-spec.js'
         ],
         preprocessors: {
@@ -25,7 +24,7 @@ module.exports = function(config) {
                     {
                         test: /\.jsx?$/,
                         loader: 'babel',
-                        exclude: /(node_modules|bower_components)/
+                        exclude: /(node_modules)/
                     }
                 ]
             },
@@ -34,8 +33,6 @@ module.exports = function(config) {
                 root: path.resolve(__dirname)
             },
             externals: {
-                'cheerio': 'window',
-                'sinon': true,
                 'react/addons': true,
                 'react/lib/ExecutionEnvironment': true,
                 'react/lib/ReactContext': true,
