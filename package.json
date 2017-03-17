@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {
-    "test": "karma start ./test/karma.conf.js"
+    "test": "karma start ./test/karma.conf.js",
+    "build": "webpack -p --progress"
   },
   "repository": {
     "type": "git",

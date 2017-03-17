@@ -12,7 +12,3 @@ export default class SimpleCard extends React.Component {
 };
 
 SimpleCard.displayName = 'SimpleCard';
-
-SimpleCard.propTypes = {
-    items: React.PropTypes.array.isRequired
-};
