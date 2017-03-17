@@ -1,11 +1,4 @@
-<h1 align="center">Simple Card</h1>
-<p align="center">
-    <a href="https://npm.morph.int.tools.bbc.co.uk/bbc-morph-sport-search" target="_blank">
-        <img src="https://img.shields.io/badge/morph-npm-2C82C9.svg?style=flat-square">
-    </a>
-</p>
-
-A generic predictive navigation search.
+###Simple Card
 
 ## Parameters
 
