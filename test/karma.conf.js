@@ -6,10 +6,10 @@ module.exports = function(config) {
         frameworks: ['jasmine'],
         files: [
             require.resolve('phantomjs-polyfill/bind-polyfill'),
-            'test/*-spec.js'
+            'test/**/*-spec.js'
         ],
         preprocessors: {
-            'test/*-spec.js': ['webpack', 'sourcemap']
+            'test/**/*-spec.js': ['webpack', 'sourcemap']
         },
         plugins: [
             'karma-jasmine',
@@ -21,7 +21,7 @@ module.exports = function(config) {
         webpack: {
             module: {
                 rules: [{
-                    test: /\.jsx$/,
+                    test: /\.jsx?$/,
                     exclude: [/node_modules/],
                     use: [{
                         loader: 'babel-loader'
