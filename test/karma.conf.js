@@ -2,14 +2,14 @@ var path = require('path');
 
 module.exports = function(config) {
     config.set({
-        basePath: '../../',
+        basePath: '../',
         frameworks: ['jasmine'],
         files: [
             require.resolve('phantomjs-polyfill/bind-polyfill'),
-            'test/unit/*-spec.js'
+            'test/*-spec.js'
         ],
         preprocessors: {
-            'test/unit/*-spec.js': ['webpack', 'sourcemap']
+            'test/*-spec.js': ['webpack', 'sourcemap']
         },
         plugins: [
             'karma-jasmine',
@@ -20,24 +20,18 @@ module.exports = function(config) {
         ],
         webpack: {
             module: {
-                loaders: [
-                    {
-                        test: /\.jsx?$/,
-                        loader: 'babel',
-                        exclude: /(node_modules)/
-                    }
-                ]
-            },
-            resolve: {
-                extensions: ['', '.js', '.jsx'],
-                root: path.resolve(__dirname)
+                rules: [{
+                    test: /\.jsx$/,
+                    exclude: [/node_modules/],
+                    use: [{
+                        loader: 'babel-loader'
+                    }]
+                }]
             },
             externals: {
                 'react/addons': true,
                 'react/lib/ExecutionEnvironment': true,
-                'react/lib/ReactContext': true,
-                'morph-static-prefix': 'function() { return "static/prefix/mock"; }',
-                'bbc-morph-grandstand': 'function() { return ""}; '
+                'react/lib/ReactContext': true
             }
         },
         logLevel: config.LOG_INFO,
