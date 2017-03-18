@@ -26,7 +26,15 @@ var config = {
             use: [{
                 loader: 'babel-loader'
             }]
+        },
+        {
+            test: /\.jsx?$/,
+            exclude: [/node_modules/],
+            use: [{
+                loader: 'eslint-loader',
+            }]
         }]
+
     },
     resolve: {
         extensions: ['.jsx', '.js'],

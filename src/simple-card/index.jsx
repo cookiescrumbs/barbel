@@ -9,7 +9,7 @@ class SimpleCard extends React.Component {
             </div>
         );
     }
-};
+}
 
 SimpleCard.displayName = 'SimpleCard';
 

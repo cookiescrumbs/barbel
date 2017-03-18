@@ -1,1 +1,2 @@
- export SimpleCard from 'simple-card/index.jsx';
+ export SimpleCard from 'simple-card';
+

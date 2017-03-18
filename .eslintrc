@@ -1,7 +1,5 @@
-// 20170315194220
-// https://raw.githubusercontent.com/cookiescrumbs/google-location-map/master/.eslintrc
-
 {
+  "parser": "babel-eslint",
   "env": {
     "node": true,
     "browser": true,
