@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class SimpleCard extends React.Component {
+class SimpleCard extends React.Component {
 
     render() {
         return (
@@ -12,3 +12,5 @@ export default class SimpleCard extends React.Component {
 };
 
 SimpleCard.displayName = 'SimpleCard';
+
+export default SimpleCard;

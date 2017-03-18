@@ -1,9 +1,8 @@
 var webpack = require('webpack');
 var path = require('path');
-var libraryName = '';
 
 var config = {
-    entry: path.resolve(__dirname, './src'),
+    entry: path.resolve(__dirname, './src/index.js'),
     devtool: 'source-map',
     output: {
         path: path.resolve(__dirname + '/lib'),
@@ -18,6 +17,14 @@ var config = {
         commonjs2: 'react',
         commonjs: 'react',
         amd: 'react',
+      }
+    },
+    {
+      'react-dom': {
+        root: 'ReactDOM',
+        commonjs2: 'react-dom',
+        commonjs: 'react-dom',
+        amd: 'react-dom',
       }
     }],
     module: {

@@ -1,1 +1,1 @@
-export { SimpleCard } from './simple-card';
+ export SimpleCard from 'simple-card/index.jsx';
