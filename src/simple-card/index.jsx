@@ -3,13 +3,19 @@ import React from 'react';
 class SimpleCard extends React.Component {
 
     render() {
+
+        const heading = this.props.heading,
+            subHeading = this.props.subHeading,
+            href = this.props.href,
+            imgSrc = this.props.imgSrc;
+
         return (
             <div className="col-md-4 col-sm-12 simple-card">
-                <a href="/waters/loch-neldricken">
-                <img src="https://dur8xuaowfaya.cloudfront.net/images/images/000/000/077/medium/neldricken.jpg?1476951599" className="img-responsive img-centered" alt="Loch Neldricken" />
+                <a href={href}>
+                <img src={imgSrc} className="img-responsive img-centered" alt="blah" />
                 <div className="caption">
-                    <h4>Loch Neldricken</h4>
-                    <p className="text-muted">Galloway Forest Park, Scotland</p>
+                    <h4>{heading}</h4>
+                    <p className="text-muted">{subHeading}</p>
                 </div>
                 </a>
             </div>
@@ -18,5 +24,12 @@ class SimpleCard extends React.Component {
 }
 
 SimpleCard.displayName = 'SimpleCard';
+
+SimpleCard.propTypes = {
+    href: React.PropTypes.string.isRequired,
+    imgSrc: React.PropTypes.string.isRequired,
+    heading: React.PropTypes.string.isRequired,
+    subHeading: React.PropTypes.string.isRequired
+};
 
 export default SimpleCard;

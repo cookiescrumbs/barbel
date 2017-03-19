@@ -1,11 +1,15 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import Component from '../../src/simple-card/index.jsx';
-import items from '../data/items';
 
 describe('Simple Card', function() {
 
-    const props = { items };
+    const props = {
+        href: '/waters/loch-neldricken',
+        imgSrc: 'https://dur8xuaowfaya.cloudfront.net/images/images/000/000/077/medium/neldricken.jpg?1476951599',
+        heading: 'Loch Neldricken',
+        subHeading: 'Galloway Forest Park, Scotland'
+    };
 
     let rendered = null;
     let compNode = null;
@@ -15,7 +19,22 @@ describe('Simple Card', function() {
         compNode = rendered.find('.simple-card');
     });
 
-    it('should be a simple card element', function() {
-        expect(compNode.exists()).toBe(true);
+    it('should have a heading', function() {
+        expect(compNode.find('h4').text()).toBe('Loch Neldricken');
     });
+
+    it('should have a sub-heading', function() {
+        expect(compNode.find('.caption p').text()).toBe('Galloway Forest Park, Scotland');
+    });
+
+    it('should have an image', function() {
+        expect(compNode.find('img').get(0).props.src).toBe('https://dur8xuaowfaya.cloudfront.net/images/images/000/000/077/medium/neldricken.jpg?1476951599')
+    });
+
+    it('should have a link', function() {
+        expect(compNode.find('a').get(0).props.href).toBe('/waters/loch-neldricken')
+
+    });
+
+
 });

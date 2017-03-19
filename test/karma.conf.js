@@ -28,7 +28,11 @@ module.exports = function(config) {
                     }]
                 }]
             },
-            externals: {}
+            externals: {
+                'react/addons': true,
+                'react/lib/ReactContext': true,
+                'react/lib/ExecutionEnvironment': true
+            }
         },
         logLevel: config.LOG_INFO,
         webpackServer: {
