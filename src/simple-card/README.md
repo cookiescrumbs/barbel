@@ -1,18 +1,15 @@
 # Simple Card
 
-## Parameters
-
-| Key   |      Values      | Description |
-|----------|-------------|-------------|
-| items | `[{name: 'Apple', url: '/apple'}, {name: 'pear', url: '/pear'}]` | Items to search through and navigate to. |
 
 ## Usage
 
 ```js
 import SimpleCard from 'simple-card';
 
-const props = {
-};
-
-<SimpleCard {...props}/>
+    <SimpleCard 
+        heading={'Loch Neldricken'} 
+        subHeading={'Galloway Forest Park, Scotland'} 
+        imgSrc={'https://dur8xuaowfaya.cloudfront.net/images/images/000/000/077/medium/neldricken.jpg?1476951599'} 
+        href={'/waters/loch-neldricken'}
+    />
 ```
