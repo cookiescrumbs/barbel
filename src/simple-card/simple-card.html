@@ -1,13 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>My First React Example</title>
+    <title>Simple Card</title>
+     <style type="text/css">
+      .simple-card h4 {
+        text-align: center;
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: 700;
+      }
+
+      .simple-card .caption {
+        margin: 0 auto;
+        padding: 15px;
+        max-width: 650px;
+        text-align: center;
+        background-color: #fff;
+        border-top: 1px solid #f7f7f7;
+        color: #333;
+      }
+
+      .simple-card .caption p {
+        margin: 0;
+        font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 14px;
+        font-style: italic;
+      } 
+
+      .simple-card a:link {
+        text-decoration: none;
+      }
+
+      .simple-card a:visited {
+          text-decoration: none;
+      }
+
+      .simple-card a:hover {
+          text-decoration: none;
+      }
+
+      .simple-card a:active {
+          text-decoration: none;
+      }
+
+      .simple-card a:hover .caption{
+        background-color: #e7e7e7;
+      }  
+
+      .simple-card a:hover img {
+        -webkit-filter: grayscale(100);
+        filter: grayscale(100);
+      }
+
+    </style>
+    <link rel="stylesheet" media="all" href="http://fonts.googleapis.com/css?family=Montserrat:400,700" data-turbolinks-track="false">
+    <link rel="stylesheet" media="all" href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" data-turbolinks-track="false">
   </head>
   <body>
     <div id="component-node"></div>
     <script src="https://fb.me/react-15.0.0.js"></script>
     <script src="https://fb.me/react-dom-15.0.0.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="../../lib/barbel.min.js"></script>
     <script type="text/babel">
       var SimpleCard = Barbel.SimpleCard;
