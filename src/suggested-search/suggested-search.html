@@ -3,7 +3,6 @@
   <head>
     <title>Suggested Search</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://use.fontawesome.com/79c232cfd6.js"></script>
     <style type="text/css">
       #suggested-search {
         padding: 10px;
@@ -37,7 +36,12 @@
       var SuggestedSearch = Barbel.SuggestedSearch;
       
       const props = {
-        items: [{name: 'apple', url: '/apple'}, {name: 'pear', url: '/pear'}],
+        items: [
+          {name: 'apple', url: '/apple'},
+          {name: 'avocado', url: '/avocado'},
+          {name: 'banana', url: '/banana'},
+          {name: 'pineapple', url: '/pineapple'}
+        ],
         label: 'Enter a search term',
         placeholder: 'Enter a search term',
         errorMessage: 'Sorry, no results for {{search}}',

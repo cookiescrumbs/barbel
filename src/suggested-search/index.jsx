@@ -142,7 +142,7 @@ export default class SuggestedSearch extends React.Component {
             <ul
                 id="search-results-list"
                 aria-activedescendant={activeDescendant}
-                className=""
+                className="selectNextResult"
                 role="listbox">
               {renderedResults}
            </ul>
@@ -168,7 +168,7 @@ export default class SuggestedSearch extends React.Component {
     }
 
     renderResult(item, index) {
-        return <li key={item.name} className="" role="presentation">{this.renderResultLink(item, index)}</li>;
+        return <li key={item.name} className="list-group-item" role="presentation">{this.renderResultLink(item, index)}</li>;
     }
 
     renderResults() {
@@ -189,7 +189,7 @@ export default class SuggestedSearch extends React.Component {
                 onClick={(event) => event.preventDefault()}
                 className="btn btn-default">
                 <span className="hidden">Search</span>
-                <i className="fa fa-search" aria-hidden="true"></i>
+                <i className="glyphicon glyphicon-search" aria-hidden="true"></i>
             </button>
         );
     }
@@ -202,7 +202,7 @@ export default class SuggestedSearch extends React.Component {
                 onClick={() => this.clearSearchInput()}
                 className="btn btn-default">
                 <span className="hidden">Clear input</span>
-                <i className="fa fa-times" aria-hidden="true"></i>
+                <i className="glyphicon glyphicon-remove-sign" aria-hidden="true"></i>
             </button>
         );
     }
