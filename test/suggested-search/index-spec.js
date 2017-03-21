@@ -2,7 +2,7 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import Component from '../../src/suggested-search/index.jsx';
 
-describe('Suggested Search', function() {
+describe('Suggested Search', () => {
 
     const props = {};
 
@@ -14,8 +14,15 @@ describe('Suggested Search', function() {
         compNode = rendered.find('.suggested-search');
     });
 
-    it('should have an input field', function() {
-        expect(compNode.find('form input').exists()).toBe(true);
+    describe('Given a user enters two characters.', () => {
+
+        beforeEach(() => {
+            searchBox.simulate('change', { target: { value: 'af' } });
+        });
+
+        it('should show some search results.', () => {
+            expect(rendered.find('#search-results ul li').length).toEqual(3);
+        });
     });
 
 });
