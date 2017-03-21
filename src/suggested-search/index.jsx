@@ -187,7 +187,7 @@ export default class SuggestedSearch extends React.Component {
                 key="search-button"
                 type="submit"
                 onClick={(event) => event.preventDefault()}
-                className="btn btn-default">
+                className="btn btn-default search">
                 <span className="hidden">Search</span>
                 <i className="glyphicon glyphicon-search" aria-hidden="true"></i>
             </button>
@@ -200,7 +200,7 @@ export default class SuggestedSearch extends React.Component {
                 key="clear-button"
                 type="button"
                 onClick={() => this.clearSearchInput()}
-                className="btn btn-default">
+                className="btn btn-default clear">
                 <span className="hidden">Clear input</span>
                 <i className="glyphicon glyphicon-remove-sign" aria-hidden="true"></i>
             </button>
@@ -244,6 +244,7 @@ export default class SuggestedSearch extends React.Component {
 
     componentDidUpdate() {
 
+        /* Adding focus to the active element - result list or search input  */
         const list = document.getElementById('search-results-list');
 
         if (list) {
