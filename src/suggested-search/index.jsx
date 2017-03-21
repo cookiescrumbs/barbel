@@ -126,7 +126,7 @@ export default class SuggestedSearch extends React.Component {
 
         const errorMessage = errorMessageTemplate.replace(/{{search}}/g, this.state.searchValue);
 
-        return <span className="sp-c-search__error">{errorMessage}</span>;
+        return <span className="">{errorMessage}</span>;
     }
 
     renderResultsList(orderedResults) {
@@ -142,7 +142,7 @@ export default class SuggestedSearch extends React.Component {
             <ul
                 id="search-results-list"
                 aria-activedescendant={activeDescendant}
-                className="gs-o-list-ui--top-no-border gs-o-list-ui gs-u-mb0 gel-pica"
+                className=""
                 role="listbox">
               {renderedResults}
            </ul>
@@ -153,7 +153,7 @@ export default class SuggestedSearch extends React.Component {
         if (item.url) {
             const isActive = index === this.state.activeIndex;
 
-            const className = `sp-c-search__result${isActive ? ' sp-c-search__result--active' : ''}`;
+            const className = `search-result${isActive ? ' search-result--active' : ''}`;
 
             return <a
                 id={this.searchResultID(index)}
@@ -168,7 +168,7 @@ export default class SuggestedSearch extends React.Component {
     }
 
     renderResult(item, index) {
-        return <li key={item.name} className="gs-o-list-ui__item gs-o-list-ui__item--flush" role="presentation">{this.renderResultLink(item, index)}</li>;
+        return <li key={item.name} className="" role="presentation">{this.renderResultLink(item, index)}</li>;
     }
 
     renderResults() {
@@ -187,8 +187,8 @@ export default class SuggestedSearch extends React.Component {
                 key="search-button"
                 type="submit"
                 onClick={(event) => event.preventDefault()}
-                className="btn btn-default btn-lg">
-                <span className="">Search</span>
+                className="btn btn-default">
+                <span className="hidden">Search</span>
                 <i className="fa fa-search" aria-hidden="true"></i>
             </button>
         );
@@ -200,8 +200,8 @@ export default class SuggestedSearch extends React.Component {
                 key="clear-button"
                 type="button"
                 onClick={() => this.clearSearchInput()}
-                className="">
-                <span className="">Clear input</span>
+                className="btn btn-default">
+                <span className="hidden">Clear input</span>
                 <i className="fa fa-times" aria-hidden="true"></i>
             </button>
         );
@@ -216,12 +216,12 @@ export default class SuggestedSearch extends React.Component {
     render() {
         return (
             <form action="" method="get" className="" role="search">
-                <label htmlFor="search" className="">{this.props.label}</label>
+                <label htmlFor="search" className="hidden" id="search-input">{this.props.label}</label>
                 <input
                     type="text"
                     name="search"
                     id=""
-                    className=""
+                    className="form-control input-lg"
                     placeholder={this.props.placeholder}
                     onChange={(event) => this.handleChange(event)}
                     onKeyDown={(event) => this.handleInputKeyDown(event)}
@@ -243,6 +243,7 @@ export default class SuggestedSearch extends React.Component {
     }
 
     componentDidUpdate() {
+
         const list = document.getElementById('search-results-list');
 
         if (list) {
@@ -251,7 +252,7 @@ export default class SuggestedSearch extends React.Component {
             if (activeDescendant) {
                 activeDescendant.focus();
             } else {
-                const input = document.getElementById('sp-c-search__input');
+                const input = document.getElementById('search-input');
 
                 if (input) {
                     input.focus();

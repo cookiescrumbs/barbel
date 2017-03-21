@@ -5,10 +5,30 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/79c232cfd6.js"></script>
     <style type="text/css">
+      #suggested-search {
+        padding: 10px;
+      }
+
+      #suggested-search input {
+        padding: 0 10px 0 40px;
+      }
+
+      #suggested-search button {
+        position: absolute;
+        left:12px;
+        top: 17px;
+        text-align: center;
+        border: none;
+      }
+
+      #suggested-search button:hover, #suggested-search button:focus {
+         background-color: #fff;
+      }
+
     </style>
   </head>
   <body>
-    <div id="component-node"></div>
+    <div id="suggested-search"></div>
     <script src="https://fb.me/react-15.0.0.js"></script>
     <script src="https://fb.me/react-dom-15.0.0.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
@@ -17,7 +37,7 @@
       var SuggestedSearch = Barbel.SuggestedSearch;
       
       const props = {
-        items: [{name: 'Apple', url: '/apple'}, {name: 'pear', url: '/pear'}],
+        items: [{name: 'apple', url: '/apple'}, {name: 'pear', url: '/pear'}],
         label: 'Enter a search term',
         placeholder: 'Enter a search term',
         errorMessage: 'Sorry, no results for {{search}}',
@@ -25,7 +45,7 @@
       
       ReactDOM.render(
         <SuggestedSearch {...props }/>,
-        document.getElementById('component-node')
+        document.getElementById('suggested-search')
       );
     </script>
   </body>
