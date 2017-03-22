@@ -3,7 +3,7 @@ import React from 'react';
 import Module from '../../src/suggested-search/index.jsx';
 import items from './data/items';
 
-describe('Sport Search', () => {
+describe('Suggested Search', () => {
     const props = {
         items,
         label: 'Custom label',

@@ -142,7 +142,7 @@ export default class SuggestedSearch extends React.Component {
             <ul
                 id="search-results-list"
                 aria-activedescendant={activeDescendant}
-                className="selectNextResult"
+                className="list-group"
                 role="listbox">
               {renderedResults}
            </ul>
@@ -153,7 +153,7 @@ export default class SuggestedSearch extends React.Component {
         if (item.url) {
             const isActive = index === this.state.activeIndex;
 
-            const className = `search-result${isActive ? ' search-result--active' : ''}`;
+            const className = `list-group-item ${isActive ? ' active' : ''}`;
 
             return <a
                 id={this.searchResultID(index)}
@@ -168,7 +168,7 @@ export default class SuggestedSearch extends React.Component {
     }
 
     renderResult(item, index) {
-        return <li key={item.name} className="list-group-item" role="presentation">{this.renderResultLink(item, index)}</li>;
+        return <li key={item.name} className="" role="presentation">{this.renderResultLink(item, index)}</li>;
     }
 
     renderResults() {
@@ -244,7 +244,6 @@ export default class SuggestedSearch extends React.Component {
 
     componentDidUpdate() {
 
-        /* Adding focus to the active element - result list or search input  */
         const list = document.getElementById('search-results-list');
 
         if (list) {
