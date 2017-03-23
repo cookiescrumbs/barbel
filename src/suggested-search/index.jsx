@@ -126,7 +126,7 @@ export default class SuggestedSearch extends React.Component {
 
         const errorMessage = errorMessageTemplate.replace(/{{search}}/g, this.state.searchValue);
 
-        return <div className="well well-sm">{errorMessage}</div>;
+        return <div className="well well-sm error">{errorMessage}</div>;
     }
 
     renderResultsList(orderedResults) {
@@ -180,7 +180,9 @@ export default class SuggestedSearch extends React.Component {
 
     renderSearchButton() {
         return (
-            <i className="glyphicon glyphicon-search" aria-hidden="true"></i>
+            <i className="search-icon glyphicon glyphicon-search">
+                <span className="hidden">Search</span>
+            </i>
         );
     }
 
@@ -191,8 +193,9 @@ export default class SuggestedSearch extends React.Component {
                 type="button"
                 onClick={() => this.clearSearchInput()}
                 className="btn btn-default clear">
-                <span className="hidden">Clear input</span>
-                <i className="glyphicon glyphicon-remove-sign" aria-hidden="true"></i>
+                <i className="clear-icon glyphicon glyphicon-remove-sign">
+                    <span className="hidden">Clear input</span>
+                </i>
             </button>
         );
     }

@@ -28,7 +28,7 @@ describe('Suggested Search', () => {
     });
 
     it('should show the search button.', () => {
-        const searchIcon = rendered.find('button.search');
+        const searchIcon = rendered.find('i.search-icon');
 
         expect(searchIcon.text()).toBe('Search');
     });
@@ -78,12 +78,12 @@ describe('Suggested Search', () => {
         let clearButton = null;
 
         beforeEach(() => {
-            searchBox.simulate('change', { target: { value: 'af' } });
+            searchBox.simulate('change', { target: { value: 'co' } });
             clearButton = rendered.find('button.clear');
         });
 
         it('should show some search results.', () => {
-            expect(rendered.find('#search-results ul li').length).toEqual(3);
+            expect(rendered.find('#search-results div a').length).toEqual(3);
         });
 
         it('should not show the search button.', () => {
@@ -99,22 +99,22 @@ describe('Suggested Search', () => {
         it('pressing the clear button should clear the results and input field.', () => {
             clearButton.simulate('click', {});
             expect(searchBox.props().value).toBe('');
-            expect(rendered.find('#search-results ul li').length).toEqual(0);
+            expect(rendered.find('#search-results a').length).toEqual(0);
         });
 
         it('should order the results alphabetically.', () => {
-            const searchResults = rendered.find('#search-results ul li').map((item) => item.text());
+            const searchResults = rendered.find('#search-results a').map((item) => item.text());
 
-            expect(searchResults).toEqual(['AFC Wimbledon', 'Africa Cup of Nations', 'World Cup Qualifying - African']);
+            expect(searchResults).toEqual(['Cow Green Reservoir', 'Caban-coch Reservoir', 'Llyn Conglog']);
         });
 
         it('each result should link to the specified url.', () => {
             const resultLinks = rendered.find('#search-results a').map((item) => item.props().href);
 
             expect(resultLinks).toEqual([
-                'http://www.bbc.co.uk/sport/football/teams/afc-wimbledon/fixtures',
-                'http://www.bbc.co.uk/sport/football/africa-cup-of-nations/fixtures',
-                'http://www.bbc.co.uk/sport/football/qualifying-african/fixtures'
+                '/waters/cow-green-reservoir',
+                '/waters/caban-coch-reservoir',
+                '/waters/llyn-conglog'
             ]);
         });
     });
@@ -125,7 +125,7 @@ describe('Suggested Search', () => {
         });
 
         it('should display an error message.', () => {
-            const errorElement = rendered.find('#search-results span');
+            const errorElement = rendered.find('#search-results div.error');
 
             expect(errorElement.text()).toBe('Custom error message: qwerty');
         });
@@ -137,10 +137,10 @@ describe('Suggested Search', () => {
         });
 
         it('should show a list of results ordered alphabetically with those that start with the search value at the top.', () => {
-            searchBox.simulate('change', { target: { value: 'ma' } });
-            const searchResults = rendered.find('#search-results ul li').map((item) => item.text());
+            searchBox.simulate('change', { target: { value: 'lo' } });
+            const searchResults = rendered.find('#search-results a').map((item) => item.text());
 
-            expect(searchResults).toEqual(['Macclesfield Town', 'Maidstone United', 'Mainz 05', 'Malaga', 'Manchester City', 'Manchester United', 'Mansfield Town', 'Marseille', 'Atlético Madrid', 'German Bundesliga', 'German DFB Cup', 'Kilmarnock', 'Las Palmas', 'Paris Saint Germain', 'Real Madrid', 'Roma', 'United States Major League Soccer']);
+            expect(searchResults).toEqual('Loch Cul Fraoich, Loch Enoch, Loch nan Eilean, Loch Neldricken, Loch Righ Mor, Loch Valley, Lochan Carn Thearlaich, Duck Loch, Fishing Loch');
         });
 
         it('should be able to select the first result by pressing the down key.', () => {
