@@ -133,22 +133,21 @@ describe('Suggested Search', () => {
 
     describe('Given a user enters a search term that produces a lot of results.', () => {
         beforeEach(() => {
-            searchBox.simulate('change', { target: { value: 'ma' } });
+            searchBox.simulate('change', { target: { value: 'lo' } });
         });
 
         it('should show a list of results ordered alphabetically with those that start with the search value at the top.', () => {
-            searchBox.simulate('change', { target: { value: 'lo' } });
-            const searchResults = rendered.find('#search-results a').map((item) => item.text());
+            const searchResults = rendered.find('#search-results-list a').map((item) => item.text());
 
-            expect(searchResults).toEqual('Loch Cul Fraoich, Loch Enoch, Loch nan Eilean, Loch Neldricken, Loch Righ Mor, Loch Valley, Lochan Carn Thearlaich, Duck Loch, Fishing Loch');
+            expect(searchResults).toEqual( [ 'Loch Cul Fraoich', 'Loch Enoch', 'Loch nan Eilean', 'Loch Neldricken', 'Loch Righ Mor', 'Loch Valley', 'Lochan Carn Thearlaich', 'Duck Loch', 'Fishing Loch', 'Galloway Forest Park', 'Galloway Forest Park', 'Llyn Conglog' ]);
         });
 
         it('should be able to select the first result by pressing the down key.', () => {
             searchBox.simulate('keyDown', { keyCode: 40, preventDefault: () => null });
-            const activeResult = rendered.find('.search-result--active');
+            const activeResult = rendered.find('#search-results-list a.active');
 
-            expect(activeResult.text()).toBe('Macclesfield Town');
-            expect(rendered.find('ul').props()['aria-activedescendant']).toBe(activeResult.props().id);
+            expect(activeResult.text()).toBe('Loch Cul Fraoich');
+            expect(rendered.find('#search-results-list').props()['aria-activedescendant']).toBe(activeResult.props().id);
         });
 
         it('should be able to select a result by pressing the up and down keys.', () => {
@@ -156,38 +155,38 @@ describe('Suggested Search', () => {
             searchBox.simulate('keyDown', { keyCode: 40, preventDefault: () => null });
             searchBox.simulate('keyDown', { keyCode: 40, preventDefault: () => null });
             searchBox.simulate('keyDown', { keyCode: 38, preventDefault: () => null });
-            const activeResult = rendered.find('.search-result--active');
+            const activeResult = rendered.find('#search-results-list a.active');
 
-            expect(activeResult.text()).toBe('Maidstone United');
-            expect(rendered.find('ul').props()['aria-activedescendant']).toBe(activeResult.props().id);
+            expect(activeResult.text()).toBe('Loch Enoch');
+            expect(rendered.find('#search-results-list').props()['aria-activedescendant']).toBe(activeResult.props().id);
         });
 
         it('should be able to select the search input by pressing the up key.', () => {
             searchBox.simulate('keyDown', { keyCode: 40, preventDefault: () => null });
             searchBox.simulate('keyDown', { keyCode: 38, preventDefault: () => null });
-            const activeResult = rendered.find('.search-result--active');
+            const activeResult = rendered.find('#search-results-list a.active');
 
             expect(activeResult.exists()).toBe(false);
-            expect(rendered.find('ul').props()['aria-activedescendant']).toBe(null);
+            expect(rendered.find('#search-results-list').props()['aria-activedescendant']).toBe(null);
         });
 
         it('should not be able to select past the last result by pressing the down key.', () => {
-            const results = rendered.find('#search-results ul li');
+            const results = rendered.find('#search-results-list a');
 
             results.forEach(() => {
                 searchBox.simulate('keyDown', { keyCode: 40, preventDefault: () => null });
             });
-            const activeResult = rendered.find('.search-result--active');
+            const activeResult = rendered.find('#search-results-list a.active');
 
-            expect(activeResult.text()).toBe('United States Major League Soccer');
-            expect(rendered.find('ul').props()['aria-activedescendant']).toBe(activeResult.props().id);
+            expect(activeResult.text()).toBe('Llyn Conglog');
+            expect(rendered.find('#search-results-list').props()['aria-activedescendant']).toBe(activeResult.props().id);
         });
 
         it('pressing the escape key should clear the results and input field.', () => {
             searchBox.simulate('keyDown', { keyCode: 27, preventDefault: () => null });
             expect(searchBox.props().value).toBe('');
-            expect(rendered.find('#search-results ul li').length).toEqual(0);
-            expect(rendered.find('ul').props()['aria-activedescendant']).toBe(null);
+            expect(rendered.find('#search-results-list a.active').length).toEqual(0);
+            expect(rendered.find('#search-results-list').props()['aria-activedescendant']).toBe(null);
         });
 
     });
