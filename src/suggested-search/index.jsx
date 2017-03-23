@@ -126,11 +126,11 @@ export default class SuggestedSearch extends React.Component {
 
         const errorMessage = errorMessageTemplate.replace(/{{search}}/g, this.state.searchValue);
 
-        return <span className="">{errorMessage}</span>;
+        return <div className="well well-sm">{errorMessage}</div>;
     }
 
     renderResultsList(orderedResults) {
-        const renderedResults = orderedResults.map((result, index) => this.renderResult(result, index));
+        const renderedResults = orderedResults.map((result, index) => this.renderResultLink(result, index));
 
         let activeDescendant = null;
 
@@ -139,13 +139,13 @@ export default class SuggestedSearch extends React.Component {
         }
 
         return (
-            <ul
+            <div
                 id="search-results-list"
                 aria-activedescendant={activeDescendant}
                 className="list-group"
                 role="listbox">
               {renderedResults}
-           </ul>
+            </div>
         );
     }
 
@@ -161,14 +161,11 @@ export default class SuggestedSearch extends React.Component {
                 role="option"
                 href={item.url}
                 onKeyDown={(event) => this.handleKeyDown(event)}
+                key={index}
             >{item.name}</a>;
         }
 
         return item.name;
-    }
-
-    renderResult(item, index) {
-        return <li key={item.name} className="" role="presentation">{this.renderResultLink(item, index)}</li>;
     }
 
     renderResults() {
@@ -183,14 +180,7 @@ export default class SuggestedSearch extends React.Component {
 
     renderSearchButton() {
         return (
-            <button
-                key="search-button"
-                type="submit"
-                onClick={(event) => event.preventDefault()}
-                className="btn btn-default search">
-                <span className="hidden">Search</span>
-                <i className="glyphicon glyphicon-search" aria-hidden="true"></i>
-            </button>
+            <i className="glyphicon glyphicon-search" aria-hidden="true"></i>
         );
     }
 
@@ -220,7 +210,6 @@ export default class SuggestedSearch extends React.Component {
                 <input
                     type="text"
                     name="search"
-                    id=""
                     className="form-control input-lg"
                     placeholder={this.props.placeholder}
                     onChange={(event) => this.handleChange(event)}
