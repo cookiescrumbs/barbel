@@ -2,7 +2,7 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import Component from '../../src/simple-card/index.jsx';
 
-describe('Simple Card', function() {
+describe('Simple Card', () => {
 
     const props = {
         href: '/waters/loch-neldricken',
@@ -19,19 +19,19 @@ describe('Simple Card', function() {
         compNode = rendered.find('.simple-card');
     });
 
-    it('should have a heading', function() {
+    it('should have a heading', () => {
         expect(compNode.find('h4').text()).toBe('Loch Neldricken');
     });
 
-    it('should have a sub-heading', function() {
+    it('should have a sub-heading', () => {
         expect(compNode.find('.caption p').text()).toBe('Galloway Forest Park, Scotland');
     });
 
-    it('should have an image', function() {
+    it('should have an image', () => {
         expect(compNode.find('img').get(0).props.src).toBe('https://dur8xuaowfaya.cloudfront.net/images/images/000/000/077/medium/neldricken.jpg?1476951599')
     });
 
-    it('should have a link', function() {
+    it('should have a link', () => {
         expect(compNode.find('a').get(0).props.href).toBe('/waters/loch-neldricken')
 
     });

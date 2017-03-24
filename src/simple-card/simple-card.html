@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title>Simple Card</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
      <style type="text/css">
       .simple-card h4 {
         text-align: center;
@@ -56,11 +57,10 @@
     <link rel="stylesheet" media="all" href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" data-turbolinks-track="false">
   </head>
   <body>
-    <div id="component-node"></div>
+    <div class="simple-card"></div>
     <script src="https://fb.me/react-15.0.0.js"></script>
     <script src="https://fb.me/react-dom-15.0.0.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="../../lib/barbel.min.js"></script>
     <script type="text/babel">
       var SimpleCard = Barbel.SimpleCard;
@@ -72,7 +72,7 @@
           imgSrc={'https://dur8xuaowfaya.cloudfront.net/images/images/000/000/077/medium/neldricken.jpg?1476951599'} 
           href={'/waters/loch-neldricken'}
         />,
-        document.getElementById('component-node')
+        document.querySelector(".simple-card")
       );
     </script>
   </body>
