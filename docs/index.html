@@ -1,18 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title></title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Barbel - A React component library for Let's Fish</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style type="text/css">
+      #suggested-search form {
+        position: relative;
+      }
 
+      #suggested-search {
+        padding: 10px;
+      }
+
+      #suggested-search input {
+        padding: 0 10px 0 45px;
+      }
+
+      #suggested-search button {
+        position: absolute;
+        left: 5px;
+        top: 7px;
+        text-align: center;
+        border: none;
+      }
+
+      #suggested-search i.glyphicon-search{
+        position: absolute;
+        left: 17px;
+        top: 16px;
+        text-align: center;
+        border: none;
+      }
+
+      #suggested-search button:hover, #suggested-search button:focus {
+         background-color: #fff;
+      }
+
+      #suggested-search .search-result--active {
+        background-color: #777
+      }
     </style>
   </head>
   <body>
-  <h1>Barbel</h1>
-  <p>
-  A front-end web development library of common UI components built in React for <a href="http://lets.fish">Let's Fish</a>
-  </p>
-  <img src="https://img0.etsystatic.com/031/2/6758260/il_570xN.635597932_k972.jpg" >
-    <a href="/barbel/suggested-search/"> Suggested Search </a>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Barbel</h1>
+        <p>A React component library for Let's Fish</p>
+          <img src="https://img0.etsystatic.com/031/2/6758260/il_570xN.635597932_k972.jpg" class="img-responsive" alt="Barbel">
+        <p></p>
+        <p><a class="btn btn-primary btn-lg" href="https://github.com/cookiescrumbs/barbel" role="button">View the Github project</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="page-header" id="dropdowns">Suggested Search</h1>
+          <p class="lead">
+          </p>  
+          <div class="bs-example"> 
+            <div id="suggested-search"></div>
+          </div>
+          <figure class="highlight"><pre><code class="language-html" data-lang="html">
+            
+
+          </figure>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p></p>
+      </footer>
+    </div>
+
+    <script src="https://fb.me/react-15.0.0.js"></script>
+    <script src="https://fb.me/react-dom-15.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script src="./lib/barbel.min.js"></script>
+    <script type="text/babel">
+      var SuggestedSearch = Barbel.SuggestedSearch;
+      
+      const props = {
+        items:[{
+            "name": "Galloway Forest Park",
+            "url": "http://lets.fishsearch?location=Galloway+Forest+Park+Scotland"
+          },
+          {
+            "name": "Isle of jura",
+            "url": "http://lets.fish/search?location=Isle+of+Jura"
+          },
+          {
+            "name": "Snowdonia National Park",
+            "url": "http://lets.fish/search?location=Snowdonia+National+Park"
+          },
+          {
+            "name": "Rhayader and Elan Valley Angling Association",
+            "url": "http://lets.fish/fishery/rhayader-and-elan-valley-angling-association"
+          },
+          {
+            "name": "Assynt Crofters' Trust",
+            "url": "http://lets.fish/fishery/assynt-crofters-trust"
+          },
+          {
+            "name": "Stocks Fly Fishery",
+            "url": "http://lets.fish/fishery/stocks-fly-fishery"
+          },
+          {
+            "name": "Northumbrian Water ",
+            "url": "http://lets.fish/fishery/northumbrian-water"
+          },
+          {
+            "name": "Malham Tarn Field Studies Centre",
+            "url": "http://lets.fish/fishery/malham-tarn-field-studies-centre"
+          },
+          {
+            "name": "Galloway Forest Park",
+            "url": "http://lets.fish/fishery/galloway-forest-park"
+          },
+          {
+            "name": "Ruantallain Estate",
+            "url": "http://lets.fish/fishery/ruantallain-estate"
+          },
+          {
+            "name": "Cambrian Angling Association",
+            "url": "http://lets.fish/fishery/cambrian-angling-association"
+          },
+          {
+            "name": "Ardlussa Estate",
+            "url": "http://lets.fish/fishery/ardlussa-estate"
+          },
+          {
+            "name": "Llyn Conglog",
+            "url": "http://lets.fish/waters/llyn-conglog"
+          },
+          {
+            "name": "Fishing Loch",
+            "url": "http://lets.fish/waters/fishing-loch"
+          },
+          {
+            "name": "Craig Goch Reservoir",
+            "url": "http://lets.fish/waters/craig-goch-reservoir"
+          },
+          {
+            "name": "Claerwen Reservoir",
+            "url": "http://lets.fish/waters/claerwen-reservoir"
+          },
+          {
+            "name": "Llyn Du bach",
+            "url": "http://lets.fish/waters/llyn-du-bach"
+          },
+          {
+            "name": "Stocks Reservoir",
+            "url": "http://lets.fish/waters/stocks-reservoir"
+          },
+          {
+            "name": "Loch Neldricken",
+            "url": "http://lets.fish/waters/loch-neldricken"
+          },
+          {
+            "name": "Loch Righ Mor",
+            "url": "http://lets.fish/waters/loch-righ-mor"
+          },
+          {
+            "name": "Llyn Ffridd y bwlch",
+            "url": "http://lets.fish/waters/llyn-ffridd-y-bwlch"
+          },
+          {
+            "name": " Llynnau Barlwyd",
+            "url": "http://lets.fish/waters/llynnau-barlwyd"
+          },
+          {
+            "name": "Malham Tarn",
+            "url": "http://lets.fish/waters/malham-tarn"
+          },
+          {
+            "name": "Derwent Reservoir",
+            "url": "http://lets.fish/waters/derwent-reservoir"
+          },
+          {
+            "name": "Scaling Reservoir",
+            "url": "http://lets.fish/waters/scaling-reservoir"
+          },
+          {
+            "name": "Fontburn Reservoir",
+            "url": "http://lets.fish/waters/fontburn-reservoir"
+          },
+          {
+            "name": "Llyn Llagi",
+            "url": "http://lets.fish/waters/llyn-llagi-lake"
+          },
+          {
+            "name": "Lussa River ",
+            "url": "http://lets.fish/waters/lussa-river"
+          },
+          {
+            "name": "Llyn Adar",
+            "url": "http://lets.fish/waters/llyn-adar-lake"
+          },
+          {
+            "name": "Garreg-ddu Reservoir",
+            "url": "http://lets.fish/waters/garreg-ddu-reservoir"
+          },
+          {
+            "name": "Caban-coch Reservoir",
+            "url": "http://lets.fish/waters/caban-coch-reservoir"
+          },
+          {
+            "name": "Penygarreg Reservoir",
+            "url": "http://lets.fish/waters/penygarreg-reservoir"
+          },
+          {
+            "name": "Duck Loch",
+            "url": "http://lets.fish/waters/duck-loch"
+          },
+          {
+            "name": "Selset Reservoir",
+            "url": "http://lets.fish/waters/selset-reservoir"
+          },
+          {
+            "name": "Kielder Water",
+            "url": "http://lets.fish/waters/kielder-water"
+          },
+          {
+            "name": "Llynoedd Gamallt",
+            "url": "http://lets.fish/waters/llynoedd-gamallt"
+          },
+          {
+            "name": "Balderhead Reservoir",
+            "url": "http://lets.fish/waters/balderhead-reservoir"
+          },
+          {
+            "name": "Grassholme Reservoir",
+            "url": "http://lets.fish/waters/grassholme-reservoir"
+          },
+          {
+            "name": "Hury Reservoir",
+            "url": "http://lets.fish/waters/hury-reservoir"
+          },
+          {
+            "name": "Cow Green Reservoir",
+            "url": "http://lets.fish/waters/cow-green-reservoir"
+          },
+          {
+            "name": "Loch Valley",
+            "url": "http://lets.fish/waters/loch-valley"
+          },
+          {
+            "name": "Lochan Carn Thearlaich",
+            "url": "http://lets.fish/waters/lochan-carn-thearlaich"
+          },
+          {
+            "name": "Llyn Cwmorthin",
+            "url": "http://lets.fish/waters/llyn-cwmorthin"
+          },
+          {
+            "name": "Loch nan Eilean",
+            "url": "http://lets.fish/waters/loch-nan-eilean"
+          },
+          {
+            "name": "Loch Cul Fraoich",
+            "url": "http://lets.fish/waters/loch-cul-fraoich"
+          },
+          {
+            "name": "Loch Enoch",
+            "url": "http://lets.fish/waters/loch-enoch"
+          }
+        ],
+        label: 'Enter a search term',
+        placeholder: 'Enter a search term',
+        errorMessage: 'Sorry, no results for {{search}}',
+      };
+      
+      ReactDOM.render(
+        <SuggestedSearch {...props }/>,
+        document.getElementById('suggested-search')
+      );
+    </script>
+
   </body>
 </html>
