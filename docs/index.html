@@ -50,7 +50,7 @@
     <div class="jumbotron">
       <div class="container">
         <h1>Barbel</h1>
-        <p>A React component library for Let's Fish</p>
+        <p>A React component library for <a href="http://lets.fish">Let's Fish</a></p>
           <img src="https://img0.etsystatic.com/031/2/6758260/il_570xN.635597932_k972.jpg" class="img-responsive" alt="Barbel">
         <p></p>
         <p><a class="btn btn-primary btn-lg" href="https://github.com/cookiescrumbs/barbel" role="button">View the Github project</a></p>
@@ -64,13 +64,71 @@
           <h1 class="page-header" id="dropdowns">Suggested Search</h1>
           <p class="lead">
           </p>  
-          <div class="bs-example"> 
-            <div id="suggested-search"></div>
+          <div class="panel panel-default"> 
+            <div class="panel-heading">
+              <h3 class="panel-title">Example</h3>
+            </div>
+            <div class="panel-body">
+              <div id="suggested-search"></div>
+            </div>
           </div>
-          <figure class="highlight"><pre><code class="language-html" data-lang="html">
-            
-
+          <div class="panel panel-default"> 
+            <div class="panel-heading">
+              <h3 class="panel-title">Styles</h3>
+            </div>
+            <div class="panel-body">
+              <figure>
+                <pre>
+<code>
+&lt;style type=&quot;text/css&quot;&gt; 
+#suggested-search form { position: relative; } 
+#suggested-search { padding: 10px; } 
+#suggested-search input { padding: 0 10px 0 45px; } 
+#suggested-search button { position: absolute; left: 5px; top: 7px; text-align: center; border: none; } 
+#suggested-search i.glyphicon-search{ position: absolute; left: 17px; top: 16px; text-align: center; border: none; } 
+#suggested-search button:hover, #suggested-search button:focus { background-color: #fff; } 
+#suggested-search .search-result--active { background-color: #777 } 
+&lt;/style&gt;
+</code>
+                </pre>
+              </figure>
+            </div>
+          <div class="panel panel-default"> 
+            <div class="panel-heading">
+              <h3 class="panel-title">Javascript</h3>
+            </div>
+            <div class="panel-body">
+              <figure>
+            <pre>
+              <code>
+import SuggestedSearch from 'suggested-search';
+const props = {
+    items:[{
+        "name": "Galloway Forest Park",
+        "url": "/search?location=Galloway+Forest+Park+Scotland"
+      },
+      {
+        "name": "Isle of jura",
+        "url": "/search?location=Isle+of+Jura"
+      },
+      {
+        "name": "Snowdonia National Park",
+        "url": "/search?location=Snowdonia+National+Park"
+      },
+      {
+        "name": "Rhayader and Elan Valley Angling Association",
+        "url": "/fishery/rhayader-and-elan-valley-angling-association"
+      }],
+    label: 'Where would you like to go?',
+    placeholder: 'Where would you like to go?',
+    errorMessage: 'Sorry, no results for {{search}}',
+};
+&lt;SuggestedSearch {...props}/&gt;
+              </code>
+            </pre>
           </figure>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -274,8 +332,8 @@
             "url": "http://lets.fish/waters/loch-enoch"
           }
         ],
-        label: 'Enter a search term',
-        placeholder: 'Enter a search term',
+        label: 'Where would you like to go?',
+        placeholder: 'Where would you like to go?',
         errorMessage: 'Sorry, no results for {{search}}',
       };
       
