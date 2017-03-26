@@ -63,7 +63,8 @@
         <div class="col-md-12">
           <h1 class="page-header" id="dropdowns">Suggested Search</h1>
           <p class="lead">
-          </p>  
+          </p>
+
           <div class="panel panel-default"> 
             <div class="panel-heading">
               <h3 class="panel-title">Example</h3>
@@ -72,6 +73,23 @@
               <div id="suggested-search"></div>
             </div>
           </div>
+
+      <!--     <div class="panel panel-default"> 
+            <div class="panel-heading">
+              <h3 class="panel-title">Styles</h3>
+            </div>
+            <div class="panel-body">
+              <figure>
+                <pre>
+                  <code>
+                    
+                  </code>
+                </pre>
+              </figure>
+            </div>
+          </div> -->
+
+          
           <div class="panel panel-default"> 
             <div class="panel-heading">
               <h3 class="panel-title">Styles</h3>
@@ -79,7 +97,7 @@
             <div class="panel-body">
               <figure>
                 <pre>
-<code>
+                  <code>
 &lt;style type=&quot;text/css&quot;&gt; 
 #suggested-search form { position: relative; } 
 #suggested-search { padding: 10px; } 
@@ -89,54 +107,53 @@
 #suggested-search button:hover, #suggested-search button:focus { background-color: #fff; } 
 #suggested-search .search-result--active { background-color: #777 } 
 &lt;/style&gt;
-</code>
+                  </code>
                 </pre>
               </figure>
             </div>
+          </div>
+
+
           <div class="panel panel-default"> 
             <div class="panel-heading">
-              <h3 class="panel-title">Javascript</h3>
+              <h3 class="panel-title">JS</h3>
             </div>
             <div class="panel-body">
               <figure>
-            <pre>
-              <code>
+                <pre>
+                  <code>
 import SuggestedSearch from 'suggested-search';
 const props = {
     items:[{
-        "name": "Galloway Forest Park",
-        "url": "/search?location=Galloway+Forest+Park+Scotland"
-      },
-      {
-        "name": "Isle of jura",
-        "url": "/search?location=Isle+of+Jura"
-      },
-      {
-        "name": "Snowdonia National Park",
-        "url": "/search?location=Snowdonia+National+Park"
-      },
-      {
-        "name": "Rhayader and Elan Valley Angling Association",
-        "url": "/fishery/rhayader-and-elan-valley-angling-association"
-      }],
+    "name": "Galloway Forest Park",
+    "url": "/search?location=Galloway+Forest+Park+Scotland"
+    },
+    {
+    "name": "Isle of jura",
+    "url": "/search?location=Isle+of+Jura"
+    },
+    {
+    "name": "Snowdonia National Park",
+    "url": "/search?location=Snowdonia+National+Park"
+    },
+    {
+    "name": "Rhayader and Elan Valley Angling Association",
+    "url": "/fishery/rhayader-and-elan-valley-angling-association"
+    }],
     label: 'Where would you like to go?',
     placeholder: 'Where would you like to go?',
     errorMessage: 'Sorry, no results for {{search}}',
 };
 &lt;SuggestedSearch {...props}/&gt;
-              </code>
-            </pre>
-          </figure>
+                  </code>
+                </pre>
+              </figure>
             </div>
           </div>
+
         </div>
       </div>
 
-      <hr>
-
-      <footer>
-        <p></p>
-      </footer>
     </div>
 
     <script src="https://fb.me/react-15.0.0.js"></script>
