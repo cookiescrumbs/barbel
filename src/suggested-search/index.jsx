@@ -5,6 +5,31 @@ const KEY_ESCAPE = 27;
 const KEY_UP = 38;
 const KEY_DOWN = 40;
 
+const STYLES = {
+    form: {
+        position: 'relative'
+    },
+    input: {
+        padding: '0 10px 0 45px'
+    },
+    button: {
+        position: 'absolute',
+        left: '5px',
+        top: '7px',
+        textAlign: 'center',
+        border: 'none',
+        backgroundColor: '#fff'
+    },
+    searchIcon: {
+        position: 'absolute',
+        left: '18px',
+        top: '16px',
+        textAlign: 'center',
+        border: 'none'
+    }
+};
+
+
 export default class SuggestedSearch extends React.Component {
 
     constructor(props) {
@@ -180,7 +205,7 @@ export default class SuggestedSearch extends React.Component {
 
     renderSearchButton() {
         return (
-            <i className="search-icon glyphicon glyphicon-search">
+            <i style={STYLES.searchIcon} className="search-icon glyphicon glyphicon-search">
                 <span className="hidden">Search</span>
             </i>
         );
@@ -189,6 +214,7 @@ export default class SuggestedSearch extends React.Component {
     renderClearButton() {
         return (
             <button
+                style={STYLES.button}
                 key="clear-button"
                 type="button"
                 onClick={() => this.clearSearchInput()}
@@ -208,9 +234,10 @@ export default class SuggestedSearch extends React.Component {
 
     render() {
         return (
-            <form action="" method="get" className="" role="search">
+            <form action="" method="get" style={STYLES.form} role="search">
                 <label htmlFor="search" className="hidden" id="search-input">{this.props.label}</label>
                 <input
+                    style={STYLES.input}
                     type="text"
                     name="search"
                     className="form-control input-lg"
