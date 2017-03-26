@@ -6,3 +6,4 @@
 ## Docs
 
 See the [documentation](https://cookiescrumbs.github.io/barbel/).
+
