@@ -163,10 +163,12 @@
                 <pre>
                   <code>
 var SimpleCard = Barbel.SimpleCard;
+
 &lt;SimpleCard
   heading={'Loch Neldricken'}
   subHeading={'Galloway Forest Park, Scotland'}
-  imgSrc={'https://dur8xuaowfaya.cloudfront.net/images/images/000/000/077/medium/neldricken.jpg?1476951599'} href={'/waters/loch-neldricken'}
+  imgSrc={'https://dur8xuaowfaya.cloudfront.net/images/images/000/000/077/medium/neldricken.jpg?1476951599'} 
+  href={'/waters/loch-neldricken'}
   /&gt;
                 </code>
                 </pre>
@@ -224,6 +226,7 @@ var SimpleCard = Barbel.SimpleCard;
                 <pre>
                   <code>
 import SuggestedSearch from 'suggested-search';
+
 const props = {
     items:[{
     "name": "Galloway Forest Park",
@@ -245,6 +248,7 @@ const props = {
     placeholder: 'Where would you like to go?',
     errorMessage: 'Sorry, no results for {{search}}',
 };
+
 &lt;SuggestedSearch {...props}/&gt;
                   </code>
                 </pre>
