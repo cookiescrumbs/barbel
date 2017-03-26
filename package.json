@@ -1,7 +1,7 @@
 {
   "name": "Barbel",
   "version": "0.0.1",
-  "description": "A front-end web development library of common UI components built in React for Let's Fish",
+  "description": "A React component library for Let's Fish",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {
@@ -14,7 +14,7 @@
   },
   "author": "Steven James Cook",
   "license": "MIT",
-  "homepage": "https://github.com/cookiescrumbs/barbel#readme",
+  "homepage": "https://cookiescrumbs.github.io/barbel/",
   "devDependencies": {
     "babel-cli": "^6.24.0",
     "babel-core": "^6.24.0",
