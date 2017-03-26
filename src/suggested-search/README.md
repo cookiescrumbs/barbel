@@ -6,7 +6,6 @@
 ```js
 import SuggestedSearch from 'suggested-search';
 
-
     const props = {
         items:[{
             "name": "Galloway Forest Park",
@@ -23,9 +22,11 @@ import SuggestedSearch from 'suggested-search';
           {
             "name": "Rhayader and Elan Valley Angling Association",
             "url": "/fishery/rhayader-and-elan-valley-angling-association"
-          }]
+          }],
+        label: 'Where would you like to go?',
+        placeholder: 'Where would you like to go?',
+        errorMessage: 'Sorry, no results for {{search}}'
     };
-
 
     <SuggestedSearch {...props}/>
 ```

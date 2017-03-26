@@ -1,5 +1,5 @@
 {
-  "name": "Barbel",
+  "name": "barbel",
   "version": "0.0.1",
   "description": "A React component library for Let's Fish",
   "main": "lib/index.js",
