@@ -13,7 +13,16 @@ const Caption = styled.div`
 `;
 
 const Link = styled.a`
-    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+`;
+
+const Img = styled.img`
+    &:hover {
+       -webkit-filter: grayscale(100);
+        filter: grayscale(100);
+    }
 `;
 
 
@@ -28,13 +37,13 @@ class SimpleCard extends React.Component {
 
         return (
             <div className="col-md-4 col-sm-12 simple-card">
-                <a href={href}>
-                    <img src={imgSrc} className="img-responsive img-centered" alt="blah" />
+                <Link href={href}>
+                    <Img src={imgSrc} className="img-responsive img-centered" alt="blah" />
                     <Caption>
                         <h4>{heading}</h4>
                         <p className="text-muted">{subHeading}</p>
                     </Caption>
-                </a>
+                </Link>
             </div>
         );
     }
