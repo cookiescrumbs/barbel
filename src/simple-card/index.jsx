@@ -1,4 +1,19 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Caption = styled.div`
+    margin: 0 auto;
+    padding: 15px;
+    max-width: 650px;
+    text-align: center;
+    background-color: #fff;
+    borderTop: 1px solid #f7f7f7;
+    color: #333;
+`;
+
+const Link = styled.a`
+    text-decoration: none;
+`;
 
 class SimpleCard extends React.Component {
 
@@ -11,13 +26,13 @@ class SimpleCard extends React.Component {
 
         return (
             <div className="col-md-4 col-sm-12 simple-card">
-                <a href={href}>
-                <img src={imgSrc} className="img-responsive img-centered" alt="blah" />
-                <div className="caption">
-                    <h4>{heading}</h4>
-                    <p className="text-muted">{subHeading}</p>
-                </div>
-                </a>
+                <Link href={href}>
+                    <img src={imgSrc} className="img-responsive img-centered" alt="blah" />
+                    <Caption>
+                        <h4>{heading}</h4>
+                        <p className="text-muted">{subHeading}</p>
+                    </Caption>
+                </Link>
             </div>
         );
     }
