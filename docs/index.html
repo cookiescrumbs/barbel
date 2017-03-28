@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
       <style type="text/css">
-  
+
    /*   .simple-card a:link {
         text-decoration: none;
       }
@@ -29,7 +29,7 @@
 
       .simple-card a:hover .caption{
         background-color: #e7e7e7;
-      }  
+      }
 
       .simple-card a:hover img {
         -webkit-filter: grayscale(100);
@@ -45,6 +45,11 @@
         <p>A React component library for <a href="http://lets.fish">Let's Fish</a></p>
           <img src="https://img0.etsystatic.com/031/2/6758260/il_570xN.635597932_k972.jpg" class="img-responsive" alt="Barbel">
         <p></p>
+        <h3>Install</h3>
+        <figure><pre><code>$ npm install --save barbel</code></pre></figure>
+        <h3>Styles</h3>
+        <p>The base styles are from Boostrap.</p>
+        <figure><pre><code>&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"&gt;</code></pre></figure>
         <p><a class="btn btn-primary btn-lg" href="https://github.com/cookiescrumbs/barbel" role="button">View the Github project</a></p>
       </div>
     </div>
@@ -52,69 +57,33 @@
     <div class="container">
 
       <div class="row">
-
-         <div class="col-md-12">
+        <div class="col-md-12">
           <h1 class="page-header" id="dropdowns">Simple Card</h1>
-          <p class="lead">
-          </p>
+          <div class="simple-card"></div>
+        </div>
+      </div>
 
-          <div class="panel panel-default"> 
-            <div class="panel-heading">
-              <h3 class="panel-title">Example</h3>
-            </div>
-            <div class="panel-body">
-              <div class="simple-card"></div>
-            </div>
-          </div>
-
-          <div class="panel panel-default"> 
-            <div class="panel-heading">
-              <h3 class="panel-title">JS</h3>
-            </div>
-            <div class="panel-body">
-              <figure>
-                <pre>
-                  <code>
-var SimpleCard = Barbel.SimpleCard;
-
+      <div class="row">
+        <div class="col-md-12">
+          <figure>
+            <pre><code>import SimpleCard  from 'simple-card';
 &lt;SimpleCard
   heading={'Loch Neldricken'}
   subHeading={'Galloway Forest Park, Scotland'}
-  imgSrc={'https://dur8xuaowfaya.cloudfront.net/images/images/000/000/077/medium/neldricken.jpg?1476951599'} 
+  imgSrc={'https://dur8xuaowfaya.cloudfront.net/images/images/000/000/077/medium/neldricken.jpg?1476951599'}
   href={'/waters/loch-neldricken'}
-  /&gt;
-                </code>
-                </pre>
-              </figure>
-            </div>
-          </div>
-
+/&gt;</code></pre>
+          </figure>
         </div>
+      </div>
+
+       <div class="row">
 
         <div class="col-md-12">
           <h1 class="page-header" id="dropdowns">Suggested Search</h1>
-          <p class="lead">
-          </p>
-
-          <div class="panel panel-default"> 
-            <div class="panel-heading">
-              <h3 class="panel-title">Example</h3>
-            </div>
-            <div class="panel-body">
-              <div id="suggested-search"></div>
-            </div>
-          </div>
-
-          <div class="panel panel-default"> 
-            <div class="panel-heading">
-              <h3 class="panel-title">JS</h3>
-            </div>
-            <div class="panel-body">
-              <figure>
-                <pre>
-                  <code>
-import SuggestedSearch from 'suggested-search';
-
+          <div id="suggested-search"></div>
+          <figure>
+          <pre><code>import SuggestedSearch from 'suggested-search';
 const props = {
     items:[{
     "name": "Galloway Forest Park",
@@ -137,19 +106,13 @@ const props = {
     errorMessage: 'Sorry, no results for {{search}}',
 };
 
-&lt;SuggestedSearch {...props}/&gt;
-                  </code>
-                </pre>
-              </figure>
-            </div>
-          </div>
-
+&lt;SuggestedSearch {...props}/&gt;</code></pre>
+          </figure>
         </div>
 
-
-      </div>
-
     </div>
+
+</div>
 
     <script src="https://fb.me/react-15.0.0.js"></script>
     <script src="https://fb.me/react-dom-15.0.0.js"></script>
@@ -158,7 +121,7 @@ const props = {
     <script src="./lib/barbel.min.js"></script>
     <script type="text/babel">
       var SuggestedSearch = Barbel.SuggestedSearch;
-      
+
       const props = {
         items:[{
             "name": "Galloway Forest Park",
@@ -349,7 +312,7 @@ const props = {
         placeholder: 'Enter your search',
         errorMessage: 'Sorry, no results for {{search}}'
       };
-      
+
       ReactDOM.render(
         <SuggestedSearch {...props }/>,
         document.getElementById('suggested-search')
@@ -359,10 +322,10 @@ const props = {
       var SimpleCard = Barbel.SimpleCard;
 
       ReactDOM.render(
-        <SimpleCard 
-          heading={'Loch Neldricken'} 
-          subHeading={'Galloway Forest Park, Scotland'} 
-          imgSrc={'https://dur8xuaowfaya.cloudfront.net/images/images/000/000/077/medium/neldricken.jpg?1476951599'} 
+        <SimpleCard
+          heading={'Loch Neldricken'}
+          subHeading={'Galloway Forest Park, Scotland'}
+          imgSrc={'https://dur8xuaowfaya.cloudfront.net/images/images/000/000/077/medium/neldricken.jpg?1476951599'}
           href={'/waters/loch-neldricken'}
         />,
         document.querySelector(".simple-card")
