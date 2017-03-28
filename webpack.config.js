@@ -4,7 +4,7 @@ var config = {
     entry: path.resolve(__dirname, './src/index.js'),
     devtool: 'source-map',
     output: {
-        path: path.resolve(__dirname, '/docs/lib'),
+        path: path.resolve(__dirname, './docs/lib'),
         filename: 'barbel.min.js',
         library: 'Barbel',
         libraryTarget: 'umd'

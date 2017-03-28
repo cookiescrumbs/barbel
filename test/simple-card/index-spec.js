@@ -26,7 +26,6 @@ describe('Simple Card', () => {
     });
 
     it('should have a sub-heading', () => {
-
         expect(compNode.find('div p').text()).to.eql('Galloway Forest Park, Scotland');
     });
 

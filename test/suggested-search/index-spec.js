@@ -96,7 +96,7 @@ describe('Suggested Search', () => {
             expect(clearButton.text()).toBe('Clear input');
         });
 
-        it('pressing the clear button should clear the results and input field.', () => {
+        it('pressing the clear button should clear the zresults and input field.', () => {
             clearButton.simulate('click', {});
             expect(searchBox.props().value).toBe('');
             expect(rendered.find('#search-results a').length).toEqual(0);
