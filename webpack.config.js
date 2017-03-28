@@ -1,23 +1,22 @@
-var webpack = require('webpack');
 var path = require('path');
 
 var config = {
     entry: path.resolve(__dirname, './src/index.js'),
     devtool: 'source-map',
     output: {
-        path: path.resolve(__dirname + '/docs/lib'),
+        path: path.resolve(__dirname, '/docs/lib'),
         filename: 'barbel.min.js',
         library: 'Barbel',
         libraryTarget: 'umd'
     },
     externals: [
-    {
-        react: 'React',
-        "styled-components": 'styled'
-    }],
+        {
+            react: 'React',
+            'styled-components': 'styled'
+        }],
     module: {
         rules: [{
-            test:/\.jsx?$/,
+            test: /\.jsx?$/,
             exclude: [/node_modules/],
             use: [{
                 loader: 'babel-loader'
@@ -30,7 +29,6 @@ var config = {
                 loader: 'eslint-loader',
             }]
         }]
-
     },
     resolve: {
         extensions: ['.jsx', '.js'],

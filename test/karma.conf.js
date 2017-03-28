@@ -1,5 +1,3 @@
-var path = require('path');
-
 module.exports = function(config) {
     config.set({
         basePath: '../',
@@ -26,7 +24,14 @@ module.exports = function(config) {
                     use: [{
                         loader: 'babel-loader'
                     }]
-                }]
+                },
+                {
+                    test: /\.jsx?$/,
+                    exclude: [/node_modules/],
+                    use: [{
+                        loader: 'eslint-loader',
+                    }]
+                }],
             },
             externals: {
                 'react/addons': true,

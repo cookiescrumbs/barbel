@@ -139,7 +139,7 @@ describe('Suggested Search', () => {
         it('should show a list of results ordered alphabetically with those that start with the search value at the top.', () => {
             const searchResults = rendered.find('#search-results-list a').map((item) => item.text());
 
-            expect(searchResults).toEqual( [ 'Loch Cul Fraoich', 'Loch Enoch', 'Loch nan Eilean', 'Loch Neldricken', 'Loch Righ Mor', 'Loch Valley', 'Lochan Carn Thearlaich', 'Duck Loch', 'Fishing Loch', 'Galloway Forest Park', 'Galloway Forest Park', 'Llyn Conglog' ]);
+            expect(searchResults).toEqual(['Loch Cul Fraoich', 'Loch Enoch', 'Loch nan Eilean', 'Loch Neldricken', 'Loch Righ Mor', 'Loch Valley', 'Lochan Carn Thearlaich', 'Duck Loch', 'Fishing Loch', 'Galloway Forest Park', 'Galloway Forest Park', 'Llyn Conglog']);
         });
 
         it('should be able to select the first result by pressing the down key.', () => {
