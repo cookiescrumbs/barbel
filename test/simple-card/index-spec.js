@@ -7,6 +7,7 @@ describe('Simple Card', () => {
     const props = {
         href: '/waters/loch-neldricken',
         imgSrc: 'https://dur8xuaowfaya.cloudfront.net/images/images/000/000/077/medium/neldricken.jpg?1476951599',
+        alt: 'Looking down over Loch Neldricken from Loch Enoch',
         heading: 'Loch Neldricken',
         subHeading: 'Galloway Forest Park, Scotland'
     };
@@ -28,12 +29,17 @@ describe('Simple Card', () => {
     });
 
     it('should have an image', () => {
-        expect(compNode.find('img').get(0).props.src).toBe('https://dur8xuaowfaya.cloudfront.net/images/images/000/000/077/medium/neldricken.jpg?1476951599')
+        console.log(compNode);
+        expect(compNode.find('img').get(0).props.src).toBe('https://dur8xuaowfaya.cloudfront.net/images/images/000/000/077/medium/neldricken.jpg?1476951599');
+    });
+
+    it('should have an alt tag', () => {
+        expect(compNode.find('img').get(0).props.alt).toBe('Looking down over Loch Neldricken from Loch Enoch');
+
     });
 
     it('should have a link', () => {
-        expect(compNode.find('a').get(0).props.href).toBe('/waters/loch-neldricken')
-
+        expect(compNode.find('a').get(0).props.href).toBe('/waters/loch-neldricken');
     });
 
 

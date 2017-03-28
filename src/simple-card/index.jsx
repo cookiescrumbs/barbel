@@ -36,9 +36,9 @@ class SimpleCard extends React.Component {
             imgSrc = this.props.imgSrc;
 
         return (
-            <div className="col-md-4 col-sm-12 simple-card">
+            <div className="simple-card">
                 <Link href={href}>
-                    <Img src={imgSrc} className="img-responsive img-centered" alt="blah" />
+                    <Img src={imgSrc} className="img-responsive center-block" alt="" />
                     <Caption>
                         <h4>{heading}</h4>
                         <p className="text-muted">{subHeading}</p>
