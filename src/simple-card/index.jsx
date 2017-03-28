@@ -33,12 +33,13 @@ class SimpleCard extends React.Component {
         const heading = this.props.heading,
             subHeading = this.props.subHeading,
             href = this.props.href,
-            imgSrc = this.props.imgSrc;
+            imgSrc = this.props.imgSrc,
+            imgAlt = this.props.imgAlt;
 
         return (
             <div className="simple-card">
                 <Link href={href}>
-                    <Img src={imgSrc} className="img-responsive center-block" alt="" />
+                    <Img src={imgSrc} className="img-responsive center-block" alt={imgAlt} />
                     <Caption>
                         <h4>{heading}</h4>
                         <p className="text-muted">{subHeading}</p>
@@ -54,6 +55,7 @@ SimpleCard.displayName = 'SimpleCard';
 SimpleCard.propTypes = {
     href: React.PropTypes.string.isRequired,
     imgSrc: React.PropTypes.string.isRequired,
+    imgAlt: React.PropTypes.string.isRequired,
     heading: React.PropTypes.string.isRequired,
     subHeading: React.PropTypes.string.isRequired
 };
