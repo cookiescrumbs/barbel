@@ -30,15 +30,15 @@ describe('Simple Card', () => {
     });
 
     it('should have an image', () => {
-        expect(compNode.find('img').get(0)['src']).to.eql('https://dur8xuaowfaya.cloudfront.net/images/images/000/000/077/medium/neldricken.jpg?1476951599');
+        expect(compNode.find('img').props().src).to.eql('https://dur8xuaowfaya.cloudfront.net/images/images/000/000/077/medium/neldricken.jpg?1476951599');
     });
 
     it('should have an alt tag', () => {
-        expect(compNode.find('img').get(0)['alt']).to.eql('Looking down over Loch Neldricken from Loch Enoch');
+        expect(compNode.find('img').props().alt).to.eql('Looking down over Loch Neldricken from Loch Enoch');
     });
 
     it('should have a link', () => {
-        expect(compNode.find('a').get(0)['href']).to.contain('/waters/loch-neldricken');
+        expect(compNode.find('a').props().href).to.contain('/waters/loch-neldricken');
     });
 
 });

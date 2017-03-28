@@ -20,7 +20,7 @@ const Link = styled.a`
 
 const Img = styled.img`
     &:hover {
-       -webkit-filter: grayscale(100);
+        -webkit-filter: grayscale(100);
         filter: grayscale(100);
     }
 `;
