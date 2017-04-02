@@ -1,6 +1,6 @@
 {
   "name": "barbel",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A React component library for Let's Fish",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
