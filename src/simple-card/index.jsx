@@ -2,6 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 
+const Card = styled.div`
+    margin: 0 0 30px 0;
+`;
+
 const Caption = styled.div`
     margin: 0 auto;
     padding: 15px;
@@ -12,16 +16,26 @@ const Caption = styled.div`
     color: #333;
 `;
 
-const Link = styled.a`
-    &:hover {
-        text-decoration: none;
-    }
-`;
-
 const Img = styled.img`
     &:hover {
         -webkit-filter: grayscale(100);
         filter: grayscale(100);
+    }
+`;
+
+const Link = styled.a`
+    &:hover {
+        text-decoration: none;
+
+        img{
+            -webkit-filter: grayscale(100);
+            filter: grayscale(100);
+        }
+
+        div {
+            background-color: #e7e7e7;
+        }
+
     }
 `;
 
@@ -37,7 +51,7 @@ class SimpleCard extends React.Component {
             imgAlt = this.props.imgAlt;
 
         return (
-            <div className="simple-card">
+            <Card className="simple-card col-md-4 col-sm-12">
                 <Link href={href}>
                     <Img src={imgSrc} className="img-responsive center-block" alt={imgAlt} />
                     <Caption>
@@ -45,7 +59,7 @@ class SimpleCard extends React.Component {
                         <p className="text-muted">{subHeading}</p>
                     </Caption>
                 </Link>
-            </div>
+            </Card>
         );
     }
 }

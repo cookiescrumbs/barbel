@@ -26,6 +26,9 @@ const STYLES = {
         top: '16px',
         textAlign: 'center',
         border: 'none'
+    },
+    searchResults: {
+        marginTop: '5px'
     }
 };
 
@@ -197,7 +200,7 @@ export default class SuggestedSearch extends React.Component {
         const orderedResults = this.orderedResults();
 
         return (
-            <div role="region" id="search-results" aria-live="polite" >
+            <div role="region" id="search-results" aria-live="polite" style={STYLES.searchResults}>
                { this.shouldShowError(orderedResults) ? this.renderResultsError() : this.renderResultsList(orderedResults)}
             </div>
         );
