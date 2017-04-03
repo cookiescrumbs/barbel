@@ -24,18 +24,25 @@ const Img = styled.img`
 `;
 
 const Link = styled.a`
+    text-decoration: none;
     &:hover {
         text-decoration: none;
-
         img{
             -webkit-filter: grayscale(100);
             filter: grayscale(100);
         }
-
         div {
             background-color: #e7e7e7;
         }
-
+    }
+    &:visited {
+        text-decoration: none;
+    }
+    &:active {
+        text-decoration: none;
+    }
+    &:focus {
+        text-decoration: none;
     }
 `;
 
