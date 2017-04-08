@@ -1,13 +1,15 @@
 {
   "name": "barbel",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A React component library for Let's Fish",
   "main": "lib/index.js",
-  "jsnext:main": "src/index.js",
   "scripts": {
     "test": "karma start ./test/karma.conf.js",
     "build": "webpack --progress -p"
   },
+  "files": [
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cookiescrumbs/barbel.git"
