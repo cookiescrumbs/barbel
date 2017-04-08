@@ -1,6 +1,6 @@
 {
   "name": "barbel",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A React component library for Let's Fish",
   "main": "lib/index.js",
   "scripts": {
